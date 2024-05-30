@@ -1,0 +1,31 @@
+jwt-authentication/
+├── main-service/
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   └── candidateController.js
+│   ├── middleware/
+│   │   └── auth.js
+│   ├── models/
+│   │   ├── Candidate.js
+│   │   └── User.js
+│   ├── routes/
+│   │   ├── authRoutes.js
+│   │   └── candidateRoutes.js
+│   ├── .env
+│   ├── app.js
+│   ├── package.json
+│   └── package-lock.json
+├── public-api/
+│   ├── controllers/
+│   │   └── publicController.js
+│   ├── middleware/
+│   │   └── apiKeyAuth.js
+│   ├── models/
+│   │   ├── Candidate.js
+│   │   └── User.js
+│   ├── routes/
+│   │   └── publicRoutes.js
+│   ├── .env
+│   ├── app.js
+│   ├── package.json
+│   └── package-lock.json
