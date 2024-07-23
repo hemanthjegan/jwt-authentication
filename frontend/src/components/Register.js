@@ -38,8 +38,8 @@ const Register = () => {
                 } else {
                     toast.error('Error: ' + error.response.data.message);
                 }
-            } else if (error.request) {
-                toast.error('Network error, please check your connection.');
+            // } else if (error.request) {
+            //     toast.error('Network error, please check your connection.');
             } else {
                 toast.error('Error: ' + error.message);
             }

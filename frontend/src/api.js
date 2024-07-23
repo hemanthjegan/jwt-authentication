@@ -4,7 +4,7 @@ const mainServiceUrl = process.env.REACT_APP_MAIN_SERVICE_URL;
 const publicApiUrl = process.env.REACT_APP_PUBLIC_API_URL;
 
 export const register = async (user) => {
-    return axios.post(`${mainServiceUrl}/api/register`, user);
+    return (await axios.post(`${mainServiceUrl}/api/register`, user)).data;
 };
 
 export const login = async (credentials) => {
@@ -37,7 +37,7 @@ export const getProfile = async (apiKey, userId) => {
 };
 
 export const getPublicCandidates = async (apiKey, userId) => {
-    return axios.get(`${publicApiUrl}/api/public/candidate`, {
+    return axios.get(`${publicApiUrl}/api/public/candidate`, null, {
         headers: {
             'x-api-key': apiKey,
             'user_id': userId

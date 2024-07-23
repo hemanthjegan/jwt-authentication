@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { login } from '../api';
 
-const Login = ({ setToken }) => {
+const Login = ({ setToken, setApiKey , setUserId}) => {
     const [credentials, setCredentials] = useState({ email: '', password: '' });
     const navigate = useNavigate();
 
@@ -17,10 +17,18 @@ const Login = ({ setToken }) => {
         try {
             const { data } = await login(credentials);
             setToken(data.token);
+            setApiKey(data.api_key);
+            setUserId(data.user_id);
             toast.success('Login successful');
-            navigate('/candidates');
+            console.log(data)
+            // if (data.api_key) {
+            //     navigate('/public/profile');
+            // } else {
+            //     navigate('/candidates');
+            // }
         } catch (error) {
-            toast.error('Error logging in');
+            // toast.error('Error logging in');
+            toast.error(error.message);
         }
     };
 
